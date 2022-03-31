@@ -1,0 +1,16 @@
+.reset-body {
+    margin: 0
+  }
+  .posts{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .post-card{
+    width: 25%;
+    padding: 10px;
+  }
+  .post-card-body{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  } 

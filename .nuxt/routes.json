@@ -1,0 +1,16 @@
+[
+  {
+    "name": "tasks-id",
+    "path": "/tasks/:id?",
+    "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\tasks\\\\_id.vue",
+    "chunkName": "pages/tasks/_id",
+    "_name": "_0a50a959"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_278e97f5"
+  }
+]
