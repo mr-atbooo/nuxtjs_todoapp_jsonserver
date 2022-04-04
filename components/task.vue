@@ -5,7 +5,9 @@
         </h3>
         <p>{{post.body}}</p>
         <template v-if="$store.state.isLogin">
-          <span class="edit button">edit</span>
+          
+          <nuxt-link :to="`/tasks/${post.id}/edit`" class="edit button">edit</nuxt-link>
+          <!-- <span class="edit button" @click="editTask(post)">edit</span> -->
           <template v-if="!deletePostLoading">
             <span class="delete button" @click="deleteTask(post.id)">delete</span>
           </template>
@@ -36,6 +38,16 @@ export default {
     }
   },
   methods: {
+     editTask(post, callback)
+    {
+      this.$store.commit("updateBoxStatus");
+       this.$store.dispatch('changeBoxtitle', "edit Task Box").then().finally(() => {
+      });
+      // this.$store.commit("updateBoxStatus");
+      // this.$store.dispatch('deleteMyTask', post).then(callback).finally(() => {
+      //   this.deletePostLoading = false;
+      // });
+    },
     // updateSelectedPost(post) {
     //   this.$store.commit("updateSelectedPost", post);
     // },

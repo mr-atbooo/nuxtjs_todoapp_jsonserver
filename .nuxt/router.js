@@ -4,7 +4,8 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _0a50a959 = () => interopDefault(import('..\\pages\\tasks\\_id.vue' /* webpackChunkName: "pages/tasks/_id" */))
+const _fc2bb5ee = () => interopDefault(import('..\\pages\\tasks\\_id\\index.vue' /* webpackChunkName: "pages/tasks/_id/index" */))
+const _4c64b923 = () => interopDefault(import('..\\pages\\tasks\\_id\\edit.vue' /* webpackChunkName: "pages/tasks/_id/edit" */))
 const _278e97f5 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -19,9 +20,13 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/tasks/:id?",
-    component: _0a50a959,
+    path: "/tasks/:id",
+    component: _fc2bb5ee,
     name: "tasks-id"
+  }, {
+    path: "/tasks/:id?/edit",
+    component: _4c64b923,
+    name: "tasks-id-edit"
   }, {
     path: "/",
     component: _278e97f5,

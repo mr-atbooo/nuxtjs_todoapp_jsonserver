@@ -9,6 +9,9 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
+# You can start JSON Server on other ports with the --port flag:
+$ json-server --watch db.json --port 3004
+
 # build for production and launch server
 $ npm run build
 $ npm run start

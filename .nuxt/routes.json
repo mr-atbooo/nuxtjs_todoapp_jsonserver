@@ -1,16 +1,20 @@
 [
   {
     "name": "tasks-id",
-    "path": "/tasks/:id?",
-    "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\tasks\\\\_id.vue",
-    "chunkName": "pages/tasks/_id",
-    "_name": "_0a50a959"
+    "path": "/tasks/:id",
+    "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\tasks\\\\_id\\\\index.vue",
+    "chunkName": "pages/tasks/_id/index"
+  },
+  {
+    "name": "tasks-id-edit",
+    "path": "/tasks/:id?/edit",
+    "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\tasks\\\\_id\\\\edit.vue",
+    "chunkName": "pages/tasks/_id/edit"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\work\\\\nuxt\\\\todoapp_jsonserver\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_278e97f5"
+    "chunkName": "pages/index"
   }
 ]

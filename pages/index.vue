@@ -1,8 +1,18 @@
 <template>
 <div>
   <div style="margin:15px"  v-if="$store.state.isLogin" >
-    <span class="addTask">Add Task</span>
+    <span class="addTask" @click="openCreatBox()">Add Task</span>
   </div>
+
+  <add-task></add-task>
+ 
+
+
+
+
+
+
+
   <div class="posts">
     <div class="post-card" v-for="post in $store.state.posts" :key="post.id">
       <task :post="post"></task>
@@ -12,10 +22,12 @@
 </template>
 <script>
 import task from "~/components/task";
+import addTask from "~/components/addTask"
+
 export default {
   name: 'IndexPage',
   components: {
-    task
+    task,addTask
   },
    data() {
     return {
@@ -23,6 +35,14 @@ export default {
       errors: []
     }
   },
+   methods : {
+    openCreatBox: function(){
+      this.$store.commit("updateBoxStatus");
+      this.$store.dispatch('changeBoxtitle', "Add Task Box").then().finally(() => {
+      });
+    },
+    
+   },
   fetch({ $axios, store }) {
     return $axios.$get("/posts").then(res => {
       store.commit("updateTasks", res);

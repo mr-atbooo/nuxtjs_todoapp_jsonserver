@@ -1,11 +1,14 @@
 
 export default {
     state:()=>({
+        boxTitle:"",
         posts:[],
         post:{},
-        isLogin: true
+        isLogin: false,
+        createBox: false
     }),
-    mutations:{
+    mutations:
+    {
         updateTasks(state,posts){
             state.posts=posts;
         },
@@ -15,18 +18,27 @@ export default {
         updateisLogin(state,p){
             state.isLogin = !state.isLogin;
         },
+        updateBoxStatus(state,p){
+          state.createBox = !state.createBox;
+      },
+      updateBoxTitle(state,title){
+        state.boxTitle = title;
+    },
     },
     actions: {
-        // addPost({state, commit}, payload){
-        //   return this.$axios.$post(`/posts`, payload).then((post) => {
-        //     commit('updateTasks', [...state.posts, post]);
-        //   })
-        // },
-        // editPost({state, commit}, payload){
-        //   return this.$axios.$put(`/posts/${payload.id}`, payload).then((post) => {
-        //     commit('updateTasks', state.posts.map( post => post.id == payload.id ? payload : post));
-        //   })
-        // },
+      changeBoxtitle({state, commit},titleMe){
+        commit('updateBoxTitle', titleMe);
+      },
+      addTask({state, commit}, payload){
+          return this.$axios.$post(`/posts`, payload).then((post) => {
+            commit('updateTasks', [...state.posts, post]);
+          })
+        },
+        editPost({state, commit}, payload){
+          return this.$axios.$put(`/posts/${payload.id}`, payload).then((post) => {
+            commit('updateTasks', state.posts.map( post => post.id == payload.id ? payload : post));
+          })
+        },
         deleteMyTask({state, commit}, postId){
           return this.$axios.$delete(`/posts/${postId}`).then(() => {
             commit('updateTasks', state.posts.filter( post => post.id != postId))

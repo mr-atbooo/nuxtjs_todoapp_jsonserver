@@ -1,4 +1,7 @@
 {
+  "AddTask": {
+    "description": "Auto imported from components/addTask.vue"
+  },
   "AppFooter": {
     "description": "Auto imported from components/AppFooter.vue"
   },
